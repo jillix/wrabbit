@@ -43,15 +43,11 @@ if (urlOpt.value) {
     });
 }
 
-if (daemonOpt.is_provided) {
-    serverOpt.is_provided = true;
-}
-
 // Start the server
 if (serverOpt.is_provided) {
 
-    if (daemonOpt.is_provided) {
-        Diable({ exit: false });
+    if (daemonOpt.is_provided && !Diable.isDaemon()) {
+        Diable({ exit: false, args: process.argv.slice(2) });
         Logger.log("Daemonizing the server process", "info");
         return setTimeout(process.exit, 1000);
     }
