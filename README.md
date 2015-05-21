@@ -1,4 +1,4 @@
-# wrabbit :rabbit: rabbit2:
+# wrabbit :rabbit: :rabbit2:
 Wrap scripts by providing the wrapping function.
 
 ## Installation
