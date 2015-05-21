@@ -25,9 +25,9 @@ var urlOpt = new CLP.Option(["u", "url"], "The url to wrap.", "url")
       , docs_url: Pack.homepage
       , examples: [
             "wrabbit -s -p 9000 # starts the server on port 9000"
-          , "wrabbit -u http://localhost:5000/foo.js"
+          , "wrabbit -u http://localhost:5000/foo.js -w 'define([\"foo\"], function (require) {'"
         ]
-    }, [urlOpt, serverOpt, portOpt])
+    }, [urlOpt, wrapLine, serverOpt, portOpt])
   ;
 
 // Validate length
