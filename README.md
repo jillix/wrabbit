@@ -1,8 +1,14 @@
-# wrabbit
+# wrabbit :rabbit: rabbit2:
 Wrap scripts by providing the wrapping function.
 
 ## Installation
 Run the following commands to download and install the application:
+
+```sh
+$ npm i -g wrabbit
+```
+
+or from git:
 
 ```sh
 $ git clone git@github.com:jillix/wrabbit.git wrabbit
@@ -10,44 +16,49 @@ $ cd wrabbit
 $ npm install
 ```
 
-## Documentation
+Then you can run:
 
-## `req(url, callback)`
+```sh
+$ wrabbit -h
+# or
+$ ./bin/wrabbit -h
+```
+
+## Documentation
+### `req(url, callback)`
 Creates a request to the provided url.
 
-### Params 
+#### Params
 - **String** `url`: The script url.
 - **Function** `callback`: The callback function.
 
-### Return
+#### Return
 - **Request** The request object.
 
-## `wrap(content, wrapline)`
+### `wrap(content, wrapline)`
 Wrap content with the wrapping code.
 
-### Params 
+#### Params
 - **String** `content`: The content to wrap.
 - **String** `wrapline`: The wrapping line (which will be prepended to the content).
 
-### Return
+#### Return
 - **String** The wrapped content.
 
-## `wrapUrl(url, wrapline, callback)`
+### `wrapUrl(url, wrapline, callback)`
 Wraps the content of a script by providing its url.
 
-### Params 
+#### Params
 - **String** `url`: The script url.
 - **String** `wrapline`: The wrapping line (which will be prepended to the content).
 - **Function** `callback`: The callback function.
 
-## `server(options, callback)`
+### `server(options, callback)`
 Starts the `Wrabbit` server.
 
-### Params 
+#### Params
 - **Object|Number** `options`: The `Lien` server options or the server port.
 - **Function** `callback`: The callback function called after the server is started.
-
-
 
 ## How to contribute
 
