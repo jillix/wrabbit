@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Wrap scripts by providing the wrapping function.",
   "main": "lib/index.js",
+  "bin": {
+    "wrabbit": "./bin/wrabbit"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/jillix/wrabbit/issues"
   },
-  "homepage": "https://github.com/jillix/wrabbit"
+  "homepage": "https://github.com/jillix/wrabbit",
+  "dependencies": {
+    "bug-killer": "^1.0.0",
+    "clp": "^1.2.0",
+    "diable": "^1.4.0",
+    "lien": "^0.0.10",
+    "ul": "^2.1.0",
+    "tinyreq": "^1.0.0"
+  },
+  "devDependencies": {}
 }
