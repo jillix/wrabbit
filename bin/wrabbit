@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+// Dependencies
+var Wrabbit = require("../lib")
+  , CLP = require("clp")
+  , Logger = require("bug-killer")
+  , Pack = require("../package.json")
+  , Diable = require("diable")
+  ;
+
+// Configure logger
+Logger.config.logLevel = 4;
+
+// Create the CLP options
+var urlOpt = new CLP.Option(["u", "url"], "The url to wrap.", "url")
+  , wrapLine = new CLP.Option(["w", "wrap-line"], "The wrapping line.", "line")
+  , serverOpt = new CLP.Option(["s", "server"], "Start the Wrabbit proxy server.")
+  , portOpt = new CLP.Option(["p", "port"], "The Wrabbit server port.", "port", 8000)
+  , daemonOpt = new CLP.Option(["d", "daemon"], "Start the server as background process.")
+  , parser = new CLP({
+        name: "Wrabbit"
+      , exe: Pack.name
+      , process: true
+      , version: Pack.version
+      , docs_url: Pack.homepage
+      , examples: [
+            "wrabbit -s -p 9000 # starts the server on port 9000"
+          , "wrabbit -u http://localhost:5000/foo.js"
+        ]
+    }, [urlOpt, serverOpt, portOpt])
+  ;
+
+// Validate length
+if (urlOpt.value) {
+    if (!wrapLine.value) {
+        return Logger.log("Missing the wrapping line.", "error");
+    }
+    return Wrabbit.wrapUrl(urlOpt.value, wrapLine.value, function (err, content) {
+        if (err) {
+            return Logger.log(err, "error");
+        }
+        console.log(content);
+    });
+}
+
