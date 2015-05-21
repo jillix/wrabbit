@@ -1,0 +1,24 @@
+{
+  "name": "wrabbit",
+  "version": "1.0.0",
+  "description": "Wrap scripts by providing the wrapping function.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jillix/wrabbit.git"
+  },
+  "keywords": [
+    "wrap",
+    "wrabbit",
+    "scripts"
+  ],
+  "author": "jillix <contact@jillix.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jillix/wrabbit/issues"
+  },
+  "homepage": "https://github.com/jillix/wrabbit"
+}
