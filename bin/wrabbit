@@ -27,7 +27,7 @@ var urlOpt = new CLP.Option(["u", "url"], "The url to wrap.", "url")
             "wrabbit -s -p 9000 # starts the server on port 9000"
           , "wrabbit -u http://localhost:5000/foo.js -w 'define([\"foo\"], function (require) {'"
         ]
-    }, [urlOpt, wrapLine, serverOpt, portOpt])
+    }, [urlOpt, wrapLine, serverOpt, portOpt, daemonOpt])
   ;
 
 // Validate length
@@ -43,3 +43,25 @@ if (urlOpt.value) {
     });
 }
 
+if (daemonOpt.is_provided) {
+    serverOpt.is_provided = true;
+}
+
+// Start the server
+if (serverOpt.is_provided) {
+
+    if (daemonOpt.is_provided) {
+        Diable({ exit: false });
+        Logger.log("Daemonizing the server process", "info");
+        return setTimeout(process.exit, 1000);
+    }
+
+    return Wrabbit.server({
+        port: portOpt.value
+    }, function (err) {
+        if (err) { return Logger.log(err, "error"); }
+        Logger.log("Wrabbit server started", "info");
+    });
+}
+
+console.log(parser.displayHelp());
