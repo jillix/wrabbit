@@ -53,12 +53,25 @@ Wraps the content of a script by providing its url.
 - **String** `wrapline`: The wrapping line (which will be prepended to the content).
 - **Function** `callback`: The callback function.
 
+#### Return
+- **Request** The request object.
+
+### `stream(url, wrapline, stream, callback)`
+Pipes data from the provided url to a stream.
+
+#### Params
+- **String** `url`: The script url.
+- **String** `wrapline`: The wrapping line (which will be prepended to the content).
+- **String** `stream`: The output stream.
+- **Function** `callback`: An optional callback. If provided, it should handle the stream ending.
+
 ### `server(options, callback)`
 Starts the `Wrabbit` server.
 
 #### Params
 - **Object|Number** `options`: The `Lien` server options or the server port.
 - **Function** `callback`: The callback function called after the server is started.
+
 
 ## How to contribute
 
