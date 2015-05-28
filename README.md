@@ -63,7 +63,6 @@ Pipes data from the provided url to a stream.
 - **String** `url`: The script url.
 - **String** `wrapline`: The wrapping line (which will be prepended to the content).
 - **String** `stream`: The output stream.
-- **Function** `callback`: An optional callback. If provided, it should handle the stream ending.
 
 ### `server(options, callback)`
 Starts the `Wrabbit` server.
