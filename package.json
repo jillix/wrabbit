@@ -30,7 +30,7 @@
     "diable": "^1.4.0",
     "lien": "^0.0.11",
     "ul": "^2.1.0",
-    "tinyreq": "^1.1.0"
+    "tinyreq": "^1.2.0"
   },
   "devDependencies": {}
 }
